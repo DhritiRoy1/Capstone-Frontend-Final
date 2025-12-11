@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>
+            url-blocker
+        </title>
+        <style>
+            body {
+                width: 400px;
+                padding: 15px;
+                font-family: Arial, sans-serif;
+            }
+            #url_display {
+                margin-bottom: 20px;
+                font-weight: bold;
+                color: #333;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #ddd;
+            }
+            .productive {
+                color: #4CAF50;
+                font-weight: bold;
+            }
+            .unproductive {
+                color: #f44336;
+                font-weight: bold;
+            }
+            .neutral {
+                color: #ff9800;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+        <body>
+            <p id="url_display"></p>
+                <div style="margin-bottom:12px;">
+                        <canvas id="stackedChart" width="380" height="220"></canvas>
+                </div>
+                <table id="urlTable">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Time Spent</th>
+                    <th>Classification</th>
+                </tr>
+            </thead>
+            <tbody id="urlTableBody">
+                <!-- Table content will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </body>
+    <script src="popup.js"></script>
+</html>

@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "URL Tracker",
+    "description": "Track and analyze your browsing patterns",
+    "version": "0.0.0.1",
+    "permissions":["storage","tabs","activeTab","webRequest","webNavigation","scripting"],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "background": {
+        "service_worker": "script.js"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"], 
+      "js": ["content.js"],                     
+      "run_at": "document_idle"                 
+    }
+  ]
+}
